@@ -32,6 +32,10 @@ build)
 clear)
   rm -rf releases
   ;;
+docker)
+  docker rmi -f apimanager-server:v1.0.0
+  docker build -t apimanager-server:v1.0.0 .
+  ;;
 *)
   echo "$0 build [linux|windows|darwin|all] | clear"
   exit 4

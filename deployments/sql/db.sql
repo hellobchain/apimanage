@@ -9,7 +9,11 @@
 # Database: apidoc
 # Generation Time: 2021-03-25 06:58:43 +0000
 # ************************************************************
+DROP DATABASE IF EXISTS `api`;
 
+CREATE DATABASE api;
+
+USE api;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;

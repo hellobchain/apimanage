@@ -1,0 +1,33 @@
+version: '3.0'
+
+services:
+  apimanager-mysql:
+    container_name: apimanager-mysql
+    image: 'mysql:5.7'
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_DATABASE: api
+      MYSQL_USER: apimanager
+      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - ../sql:/var/lib/sql
+      - ./mysql/logs:/var/log/mysql
+      - ./mysql/data:/var/lib/mysql
+    restart: always
+    healthcheck:
+      test: '/usr/bin/mysql --user=apimanager --password=123456 api --execute "SHOW TABLES;"'
+      interval: 3s
+      timeout: 300s
+      retries: 100
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+  apimanager-server:
+    container_name: apimanager-server
+    image: apimanager-server:v1.0.0
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - 8080:8080
+    restart: on-failure
