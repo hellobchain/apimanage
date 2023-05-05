@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"ApiManager/internal/app/Validators"
-	"ApiManager/internal/app/models"
+	"apimanage/internal/app/models"
+	"apimanage/internal/app/validators"
 	"net/http"
 	"strconv"
 
@@ -34,7 +34,7 @@ func DoAddCate(c *gin.Context) {
 	err := c.ShouldBind(&cateRequest)
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"msg": Validators.AddCateGetError(err.(validator.ValidationErrors)),
+			"msg": validators.AddCateGetError(err.(validator.ValidationErrors)),
 		})
 		return
 	}
@@ -63,7 +63,7 @@ func DoEditCate(c *gin.Context) {
 	err := c.ShouldBind(&cateRequest)
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"msg": Validators.EditCateGetError(err.(validator.ValidationErrors)),
+			"msg": validators.EditCateGetError(err.(validator.ValidationErrors)),
 		})
 		return
 	}

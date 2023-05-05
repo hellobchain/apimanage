@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"ApiManager/internal/app/Validators"
-	"ApiManager/internal/app/models"
+	"apimanage/internal/app/models"
+	"apimanage/internal/app/validators"
 	"net/http"
 
 	"github.com/gin-contrib/sessions"
@@ -36,7 +36,7 @@ func DoLogin(c *gin.Context) {
 	err := c.ShouldBind(&loginRequest)
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"msg": Validators.LogInGetError(err.(validator.ValidationErrors)),
+			"msg": validators.LogInGetError(err.(validator.ValidationErrors)),
 		})
 		return
 	}

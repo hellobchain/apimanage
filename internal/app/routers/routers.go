@@ -1,10 +1,10 @@
 package routers
 
 import (
-	"ApiManager/internal/app/controllers"
-	"ApiManager/internal/app/global"
-	"ApiManager/internal/app/libs"
-	"ApiManager/internal/app/models"
+	"apimanage/internal/app/controllers"
+	"apimanage/internal/app/global"
+	"apimanage/internal/app/libs"
+	"apimanage/internal/app/models"
 	"io/ioutil"
 	"log"
 	"net/http"

@@ -48,7 +48,7 @@
             </div>
             <div class="form-group">
                 <input type="text" class="form-control" id="searchcate" onkeyup="search(this)"
-                       placeholder="search here">
+                       placeholder="搜索">
             </div>
             <div id="menuList">
             </div>
@@ -82,10 +82,10 @@
     <div style="font-size:18px;">
         <div class="info" style="font-size:14px;">
             <span style="font-size:30px;" class="glyphicon glyphicon-grain" aria-hidden="true"></span> <span
-                    style="font-size:16px;position: relative;top:-4px;">Welcome to ApiManager v2.1
+                    style="font-size:16px;position: relative;top:-4px;">欢迎使用API管理工具
 
 </span><br>
-            <pre class="info" style="margin:10px 34px 10px 34px">What is ApiManager?<br><br>ApiManager is an online API document management system, which is committed to quickly solve the internal interface document writing, maintenance, query and archiving. Reduce the cost of teamwork and communication, improve work efficiency.<br><br>enjoy coding...
+            <pre class="info" style="margin:10px 34px 10px 34px">什么是API管理工具?<br><br>在线API文档管理系统；其致力于快速解决团队内部接口文档的编写、维护、存档，以及减少团队协作开发的沟通成本.<br><br>欢迎来贡献
             </pre>
         </div>
 
@@ -102,10 +102,10 @@
             <div>
                 <div id="createCollection">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="cname" placeholder="collection">
+                        <input type="text" class="form-control" name="cname" placeholder="API集合">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="cdesc" placeholder="description">
+                        <input type="text" class="form-control" name="cdesc" placeholder="描述">
                     </div>
                     <button class="btn btn-success" name="op" value="add" onclick="doCreateCollection()">Submit</button>
                 </div>
@@ -122,17 +122,17 @@
                 <div class="editCollection">
                     <div class="form-group">
                         <input type="hidden" class="form-control" name="aid" value="{{=d.aid}}"
-                               placeholder="collection">
+                               placeholder="API集合">
                         <input type="text" class="form-control" value="{{=d.cname}}" name="cname"
-                               placeholder="collection">
+                               placeholder="API集合">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" value="{{=d.cdesc}}" name="cdesc"
-                               placeholder="description">
+                               placeholder="描述">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" value="{{=d.csort}}" name="csort"
-                               placeholder="sort value">
+                               placeholder="值排序">
                     </div>
                     <button class="btn btn-success" name="op" value="edit" onclick="doEditCollection(this)">Submit
                     </button>
@@ -269,7 +269,7 @@
         {{# if(d.length == 0){ }}
         <div style="color:#FFB800;text-align: center;font-size:18px;margin:40px 0 0 0">
             This collection is empty. {{# if(boolRole(window.role == 1 || window.role == 2)){ }}<span
-                style="color:#4cae4c;cursor:pointer" onclick="CreateApi()">New Api</span> to
+                style="color:#4cae4c;cursor:pointer" onclick="CreateApi()">新的API</span> to
         this collection create an Api.{{# } }}
         </div>
         {{# } }}

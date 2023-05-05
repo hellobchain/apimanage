@@ -8,9 +8,9 @@
 package main
 
 import (
-	bt "ApiManager/internal/app/bootstrap"
-	"ApiManager/internal/app/global"
-	"ApiManager/internal/app/routers"
+	bt "apimanage/internal/app/bootstrap"
+	"apimanage/internal/app/global"
+	"apimanage/internal/app/routers"
 )
 
 func main() {

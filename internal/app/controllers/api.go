@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"ApiManager/internal/app/Validators"
-	"ApiManager/internal/app/libs"
-	"ApiManager/internal/app/models"
+	"apimanage/internal/app/libs"
+	"apimanage/internal/app/models"
+	"apimanage/internal/app/validators"
 	"encoding/json"
 	"net/http"
 	"strconv"
@@ -61,7 +61,7 @@ func DoAddApi(c *gin.Context) {
 	err := c.ShouldBind(&apiRequest)
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"msg": Validators.ApiGetError(err.(validator.ValidationErrors)),
+			"msg": validators.ApiGetError(err.(validator.ValidationErrors)),
 		})
 		return
 	}
@@ -110,7 +110,7 @@ func DoEditApi(c *gin.Context) {
 	err = c.ShouldBind(&apiRequest)
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"msg": Validators.ApiGetError(err.(validator.ValidationErrors)),
+			"msg": validators.ApiGetError(err.(validator.ValidationErrors)),
 		})
 		return
 	}

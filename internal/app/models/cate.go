@@ -1,7 +1,7 @@
 package models
 
 import (
-	bt "ApiManager/internal/app/bootstrap"
+	bt "apimanage/internal/app/bootstrap"
 	"database/sql"
 )
 

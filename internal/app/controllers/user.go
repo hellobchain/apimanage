@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"ApiManager/internal/app/Validators"
-	"ApiManager/internal/app/libs"
-	"ApiManager/internal/app/models"
+	"apimanage/internal/app/libs"
+	"apimanage/internal/app/models"
+	"apimanage/internal/app/validators"
 	"net/http"
 	"strconv"
 
@@ -59,7 +59,7 @@ func DoAddUser(c *gin.Context) {
 	err := c.ShouldBind(&userRequest)
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"msg": Validators.AddUserGetError(err.(validator.ValidationErrors)),
+			"msg": validators.AddUserGetError(err.(validator.ValidationErrors)),
 		})
 		return
 	}
@@ -85,7 +85,7 @@ func DoEditUser(c *gin.Context) {
 	err := c.ShouldBind(&userRequest)
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"msg": Validators.AddUserGetError(err.(validator.ValidationErrors)),
+			"msg": validators.AddUserGetError(err.(validator.ValidationErrors)),
 		})
 		return
 	}
@@ -125,7 +125,7 @@ func DoResetPwd(c *gin.Context) {
 	err := c.ShouldBind(&reSetPwd)
 	if err != nil {
 		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"msg": Validators.AddUserGetError(err.(validator.ValidationErrors)),
+			"msg": validators.AddUserGetError(err.(validator.ValidationErrors)),
 		})
 		return
 	}

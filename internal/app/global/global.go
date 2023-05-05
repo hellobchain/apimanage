@@ -1,7 +1,7 @@
 package global
 
 import (
-	"ApiManager/internal/app/libs"
+	"apimanage/internal/app/libs"
 	"os"
 )
 

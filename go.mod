@@ -1,4 +1,4 @@
-module ApiManager
+module apimanage
 
 go 1.15
 

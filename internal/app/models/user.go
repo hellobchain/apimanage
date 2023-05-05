@@ -1,8 +1,8 @@
 package models
 
 import (
-	bt "ApiManager/internal/app/bootstrap"
-	"ApiManager/internal/app/libs"
+	bt "apimanage/internal/app/bootstrap"
+	"apimanage/internal/app/libs"
 	"database/sql"
 	"errors"
 	"strings"

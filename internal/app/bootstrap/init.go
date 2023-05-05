@@ -1,8 +1,8 @@
 package bootstrap
 
 import (
-	"ApiManager/internal/app/Validators"
-	"ApiManager/internal/app/global"
+	"apimanage/internal/app/global"
+	"apimanage/internal/app/validators"
 	"database/sql"
 	"log"
 
@@ -44,8 +44,8 @@ func initDatabase() {
 // 加载自定义表单验证器
 func initValidation() {
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
-		_ = v.RegisterValidation("param_name", Validators.ParamName)
-		_ = v.RegisterValidation("param_type", Validators.ParamType)
+		_ = v.RegisterValidation("param_name", validators.ParamName)
+		_ = v.RegisterValidation("param_type", validators.ParamType)
 	}
 }
 
